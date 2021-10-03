@@ -9,7 +9,7 @@ phases:
       - REPO_URL=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
   build:
     commands:
-      - docker-compose build -t $REPO_URL:l
+      - docker-compose build
   post_build:
     commands:
       - docker-compose push nginx
