@@ -12,8 +12,8 @@ phases:
       - docker-compose build
   post_build:
     commands:
-      - docker-compose push
-      - docker-compose push
+      - docker-compose push nginx
+      - docker-compose push flask
       - echo "$SSH_KEY" > ~/.ssh/id_rsa
       - chmod 400 ~/.ssh/id_rsa
       - ssh -o StrictHostKeyChecking=no ubuntu@$INSTANCE "/home/ubuntu/app/deploy.sh $IMAGE_TAG"
