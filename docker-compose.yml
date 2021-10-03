@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   nginx:
-    image: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
+    image: nginx
     container_name: nginx
     volumes: 
       - ./:/usr/src/app
@@ -26,7 +26,7 @@ services:
         aliases:
           - flask_app
     image:
-      $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
+      $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:latest
 
 networks: 
   my_network:
