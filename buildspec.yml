@@ -9,10 +9,11 @@ phases:
       - REPO_URL=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
   build:
     commands:
-      - docker-compose build -t $REPO_URL:latest .
+      - docker-compose build -t $REPO_URL:l
   post_build:
     commands:
-      - docker-compose push $REPO_URL:latest
+      - docker-compose push nginx
+      - docker-compose push flask
       - echo "$SSH_KEY" > ~/.ssh/id_rsa
       - chmod 400 ~/.ssh/id_rsa
       - ssh -o StrictHostKeyChecking=no ubuntu@$INSTANCE "/home/ubuntu/app/deploy.sh $IMAGE_TAG"
