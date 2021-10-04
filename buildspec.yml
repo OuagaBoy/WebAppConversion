@@ -12,6 +12,7 @@ phases:
       - docker-compose build
   post_build:
     commands:
+      - docker-compose push
       - docker pull nginx:latest
       - docker tag nginx:latest $REPO_URL:latest
       - docker push $REPO_URL:latest
