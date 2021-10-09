@@ -13,7 +13,5 @@ phases:
       - docker-compose build
   post_build:
     commands:
-      - docker tag $Nginx_REPO_URL:latest $Nginx_REPO_URL:$Image_TAG
-      - docker tag $Flask_REPO_URL:latest $Flask_REPO_URL:$Image_TAG
       - docker-compose push
       

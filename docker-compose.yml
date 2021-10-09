@@ -5,7 +5,7 @@ services:
     build: 
       context: ./
       dockerfile: Dockerfile-alternate
-    image: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$Nginx_REPO_NAME:latest
+    image: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$Nginx_REPO_NAME:$Image_TAG
     container_name: nginx
     ports: 
       - 80:8000
@@ -23,7 +23,7 @@ services:
       my_network:
         aliases:
           - flask_app
-    image: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$Flask_REPO_NAME:latest
+    image: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$Flask_REPO_NAME:$Image_TAG
 
 networks: 
   my_network:
