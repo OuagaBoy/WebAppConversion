@@ -2,13 +2,13 @@ version: "3.3"
 
 services:
   nginx:
-    image: nginx
+    build: 
+      context: ./
+      dockerfile: Dockerfile-alternate
+    image: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$Nginx_REPO_NAME:latest
     container_name: nginx
-    volumes: 
-      - ./:/usr/src/app
-      - ./default.conf:/etc/nginx/conf.d/default.conf
     ports: 
-      - 80:80
+      - 80:8000
     networks:
       - my_network
     depends_on:
@@ -19,14 +19,11 @@ services:
       dockerfile: Dockerfile
     container_name: flask
     command: gunicorn --bind 0.0.0.0:8000 --workers 4 "ConversionApp:app"
-    volumes: 
-      - ./:/usr/src/app
     networks:
       my_network:
         aliases:
           - flask_app
-    image:
-      $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:latest
+    image: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$Flask_REPO_NAME:latest
 
 networks: 
   my_network:
