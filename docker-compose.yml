@@ -2,7 +2,6 @@ version: "3.3"
 
 services:
   nginx:
-    env_file: ./.env
     build: 
       context: ./
       dockerfile: Dockerfile-alternate
@@ -15,7 +14,6 @@ services:
     depends_on:
       - flask
   flask:
-    env_file: ./.env
     build: 
       context: ./
       dockerfile: Dockerfile
