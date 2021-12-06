@@ -7,10 +7,11 @@ body {
 }
 
 .header {
+	padding: 20px;
 	text-align: center;
 	font-weight: bold;
 	font-size: 40px;
-	padding: 20px;
+	
 }
 
 .column {
@@ -19,78 +20,106 @@ body {
 
 .row {
 	clear: both;
-	padding-top: 5px;
+	height: 40px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: blue;
 	margin-left: 5%;
 	margin-right: 5%;
+	margin-top: 1%;
+	margin-bottom: 1%;
 	display: flex;
-	justify-content:space-between;
+	align-content: center;
+	justify-content:space-evenly;
+	align-items: center;
+	justify-items: center;
 }
 
 .box1 {
-	margin: auto;
 	width: 15%;
-	padding: 5px;
+	height: 90%;
+	border-width: 2px;
+	border-style: solid;
+	border-color: red;
+	margin-left: 5%;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 20px;
 	text-align: center;
+	vertical-align: middle;
 }
 
 .box2 {
-	margin: auto;
 	width: 15%;
-	padding: 5px;
+	height: 80%;
+	border-width: 5px;
+	border-style: solid;
+	border-color: blue;
+	margin: auto;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 20px;
-	text-align: left;
+	display: flex;
+	align-items: center;
+	justify-content: start;
 }
 
 .box3 {
-	margin: auto;
 	width: 15%;
-	padding: 5px;
-	margin-right: 4%;
+	height: 100%;
+	margin-right: 5%;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 20px;
 	text-align: center;
 }
 
 .box4 {
-	margin: auto;
 	width: 15%;
-	padding: 5px;
+	height: 90%;
+	border-width: 2px;
+	border-style: solid;
+	border-color: red;
+	margin-right: 3%;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 20px;
-	text-align: center;
 }
 
 .box5 {
-	margin: auto;
 	width: 15%;
-	padding: 5px;
+	height: 80%;
+	border-width: 5px;
+	border-style: solid;
+	border-color: blue;
+	margin-right: 5%;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 20px;
-	text-align: left;
+	display: flex;
+	align-items: center;
+	justify-content: start;
 }
 
 .input {
 	width: 100%;
+	height: 85%;
 	border-style: groove;
 	border-color: gray;
-	font-size: 20px;
 	border-radius: 20px;
+	font-size: 20px;
 	text-align: center;
-	padding: 5% 5%;
+	vertical-align: middle;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
 }
 
 .button {
 	width: 80%;
+	height: 100%;
+	border-radius: 30px;
 	transition-duration: 0.4s;
 	background-color: whitesmoke;
 	color: green;
-	border-radius: 20px;
 	font-size: 20px;
 	text-align: center;
-	padding: 10px 10px;
 	text-decoration: none;
 }
 .button:hover {
@@ -99,8 +128,8 @@ body {
 }
 
 .footer {
+	padding: 10px;
 	margin-top: 100px;
 	font-size: small;
 	text-align: center;
-	padding: 10px;
 }
